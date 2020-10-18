@@ -1,0 +1,14 @@
+import 'package:corona_virus_rest_api/app/services/api_keys.dart';
+import 'package:flutter/foundation.dart';
+import 'dart:core';
+
+class API {
+  API({@required this.apiKey});
+  final String apiKey;
+
+  factory API.sandbox() => API(apiKey: APIKeys.ncovSandboxKey);
+
+  static final String host = 'ncov2019-admin.firebaseapp.com';
+
+  Uri tokenUri() => (scheme: "https", host: host,path: token);
+}
